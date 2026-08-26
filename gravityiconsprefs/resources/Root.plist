@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>title</key>
+	<string>Gravity Icons</string>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Gravity Icons</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>label</key>
+			<string>Enable Gravity</string>
+			<key>key</key>
+			<string>GIEnabled</string>
+			<key>defaults</key>
+			<string>com.qcomtoolbox.gravityicons</string>
+			<key>default</key>
+			<true/>
+			<key>PostNotification</key>
+			<string>com.qcomtoolbox.gravityicons/ReloadPrefs</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>When enabled, shake your device to send icons falling based on how you tilt it — shake again to settle them back into place. Turn this off to disable the shake gesture entirely.</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>label</key>
+			<string>Strength</string>
+			<key>key</key>
+			<string>GIStrength</string>
+			<key>defaults</key>
+			<string>com.qcomtoolbox.gravityicons</string>
+			<key>default</key>
+			<real>1.0</real>
+			<key>min</key>
+			<real>0.2</real>
+			<key>max</key>
+			<real>2.0</real>
+			<key>PostNotification</key>
+			<string>com.qcomtoolbox.gravityicons/ReloadPrefs</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>label</key>
+			<string>Hide App Names</string>
+			<key>key</key>
+			<string>GIHideLabels</string>
+			<key>defaults</key>
+			<string>com.qcomtoolbox.gravityicons</string>
+			<key>default</key>
+			<true/>
+			<key>PostNotification</key>
+			<string>com.qcomtoolbox.gravityicons/ReloadPrefs</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Fades out app names while icons are falling. Turn off to keep names visible during gravity mode.</string>
+		</dict>
+	</array>
+</dict>
+</plist>
