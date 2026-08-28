@@ -1,5 +1,7 @@
 # Gravity Icons
 
+![ICON.png](ICON.png)
+
 A rootless iOS 15 tweak that gives your home screen icons real physics.
 Enable it in **Settings → Gravity Icons**, then **shake your device** to send
 icons falling based on how you tilt it — shake again to settle them back.
