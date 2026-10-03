@@ -16,7 +16,9 @@ static NSString * const kGIEnabledKey = @"GIEnabled";
 static NSString * const kGIStrengthKey = @"GIStrength";
 static NSString * const kGIHideLabelsKey = @"GIHideLabels";
 static NSString * const kGIBordersKey = @"GIBorders";
+#if GI_DEBUG_OPTIONS
 static NSString * const kGIOutlineKey = @"GIDebugOutline";
+#endif
 static CFStringRef const kGIReloadNotification = CFSTR("com.qcomtoolbox.gravityicons/ReloadPrefs");
 
 // Real-world-ish acceleration in points/sec² at strength 1.0. UIKit's own
@@ -1122,6 +1124,7 @@ static void gravityPrefsChanged(CFNotificationCenterRef center, void *observer, 
     }
 
     BOOL wasShowingOutline = _showOutline;
+#if GI_DEBUG_OPTIONS
     CFPropertyListRef outlineValue = CFPreferencesCopyAppValue((__bridge CFStringRef)kGIOutlineKey, (__bridge CFStringRef)kGIDomain);
     if (outlineValue) {
         _showOutline = [(__bridge id)outlineValue boolValue];
@@ -1129,6 +1132,10 @@ static void gravityPrefsChanged(CFNotificationCenterRef center, void *observer, 
     } else {
         _showOutline = NO;
     }
+#else
+    // Built without debug options: ignore a value left over from a debug build.
+    _showOutline = NO;
+#endif
 
     // Icons outside the new bounds get pushed back in by the next tick's
     // edge clamp, so this just needs the bounds themselves recomputed (which

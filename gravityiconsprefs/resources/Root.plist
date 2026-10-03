@@ -11,6 +11,8 @@
 			<string>PSGroupCell</string>
 			<key>label</key>
 			<string>Gravity Icons</string>
+			<key>footerText</key>
+			<string>When enabled, shake your device to send icons falling based on how you tilt it — shake again to settle them back into place. Turn this off to disable the shake gesture entirely.</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -25,12 +27,6 @@
 			<true/>
 			<key>PostNotification</key>
 			<string>com.qcomtoolbox.gravityicons/ReloadPrefs</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>footerText</key>
-			<string>When enabled, shake your device to send icons falling based on how you tilt it — shake again to settle them back into place. Turn this off to disable the shake gesture entirely.</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -52,6 +48,12 @@
 		</dict>
 		<dict>
 			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Fades out app names while icons are falling. Turn off to keep names visible during gravity mode.</string>
+		</dict>
+		<dict>
+			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>label</key>
 			<string>Hide App Names</string>
@@ -68,7 +70,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>Fades out app names while icons are falling. Turn off to keep names visible during gravity mode.</string>
+			<string>Keeps icons below the status bar and above the dock. Turn off to let them fall anywhere on the page.</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -87,8 +89,10 @@
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
+			<key>id</key>
+			<string>GIDebugGroup</string>
 			<key>footerText</key>
-			<string>Keeps icons below the status bar and above the dock. Turn off to let them fall anywhere on the page.</string>
+			<string>Debug: draws the area icons are kept inside, with the measured values, while gravity is on.</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -107,8 +111,6 @@
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
-			<key>footerText</key>
-			<string>Debug: draws the area icons are kept inside, with the measured values, while gravity is on.</string>
 		</dict>
 		<dict>
 			<key>cell</key>

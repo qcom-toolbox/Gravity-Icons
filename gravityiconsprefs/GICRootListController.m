@@ -1,4 +1,5 @@
 #import "GICRootListController.h"
+#import <Preferences/PSSpecifier.h>
 #import <spawn.h>
 #import <unistd.h>
 
@@ -21,7 +22,16 @@ static void GIRespring(void) {
 
 - (NSArray *)specifiers {
     if (!_specifiers) {
-        _specifiers = [self loadSpecifiersFromPlistName:@"Root" target:self];
+        NSMutableArray *specifiers = [[self loadSpecifiersFromPlistName:@"Root" target:self] mutableCopy];
+#if !GI_DEBUG_OPTIONS
+        // Built without debug options: drop the debug group and its switch.
+        NSIndexSet *debug = [specifiers indexesOfObjectsPassingTest:^BOOL(PSSpecifier *specifier, NSUInteger index, BOOL *stop) {
+            return [specifier.identifier isEqualToString:@"GIDebugGroup"] ||
+                   [[specifier propertyForKey:@"key"] isEqual:@"GIDebugOutline"];
+        }];
+        [specifiers removeObjectsAtIndexes:debug];
+#endif
+        _specifiers = specifiers;
     }
     return _specifiers;
 }

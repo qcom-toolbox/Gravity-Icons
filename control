@@ -1,6 +1,6 @@
 Package: com.qcomtoolbox.gravityicons
 Name: Gravity Icons
-Version: 1.1.0
+Version: 1.1.1
 Architecture: iphoneos-arm64
 Description: Adds realistic physics-based gravity to your home screen icons. Tilt your device and watch icons fall, collide, and settle like real objects. Toggle on/off any time in Settings.
 Maintainer: qcom-toolbox <contact@office-works.ch>
