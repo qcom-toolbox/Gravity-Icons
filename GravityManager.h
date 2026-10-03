@@ -31,6 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) BOOL isEnabled;    // Settings toggle
 @property (nonatomic, readonly) BOOL isActive;     // shake-toggled runtime state
 @property (nonatomic, readonly) BOOL hideLabels;   // Settings toggle for app-name labels
+@property (nonatomic, readonly) BOOL useBorders;   // Settings toggle: keep icons out of the status bar and dock
+@property (nonatomic, readonly) BOOL showOutline;  // Settings toggle (debug): draw the active borders on screen
 
 @end
 
